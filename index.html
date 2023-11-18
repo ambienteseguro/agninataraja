@@ -14,7 +14,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh;
+            min-height: 100vh;
         }
 
         #banner {
@@ -77,6 +77,21 @@
 
         .instruction-list li {
             margin-bottom: 10px;
+        }
+
+        @media only screen and (max-width: 600px) {
+            #banner {
+                font-size: 24px;
+            }
+
+            #QRCode {
+                width: 120px;
+                height: 120px;
+            }
+
+            #copyQRCode-button {
+                max-width: 180px;
+            }
         }
     </style>
 </head>
