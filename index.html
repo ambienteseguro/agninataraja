@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agni Nataraja Pay</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+         #banner {
+            background-color: #8d1826;
+            color: white;
+            text-align: center;
+            padding: 24px;
+            font-family: 'Calibre';
+            font-size: 30px;
+            font-weight: bold;
+	    width: 100%;
+            box-sizing: border-box;
+        
+        }
+
+        #content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            max-width: 800px;
+            width: 90%;
+        }
+
+        #left-text {
+            flex: 1;
+        }
+
+        #right-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #QRCode {
+            width: 180px;
+            height: 180px;
+            margin-bottom: 20px;
+        }
+
+        #copyQRCode-button {
+            width: 100%;
+            max-width: 230px;
+            height: 40px;
+            background-color: #8d1826;
+            color: white;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+       
+    </style>
+</head>
+<body>
+
+    <div id="banner">	Agni Nataraja - Página de Pagamento  </div>
+
+
+    <div id="content">
+        <div id="left-text">
+            
+	<p>Utilize a função de QR-Code Pix para efetuar o pagamento.</p>
+
+    <p>Siga esses passos simples:</p>
+    <ol>
+        <li>Abra o aplicativo do seu banco no seu celular.</li>
+        <li>Escolha a opção "Pagar com QR-Code" e aponte o celular para a leitura do QR-Code.</li>
+        <li>Confira os detalhes e confirme o pagamento ao tocar em "Confirmar Pagamento".</li>
+    </ol>
+
+    <p>Pronto! Seu pagamento foi concluído.</p>
+
+    <p>Se precisar, utilize a função Copiar e Colar para uma experiência ainda mais fácil:</p>
+    <ol>
+        <li>Toque no botão "Copiar código PIX" e copie o código.</li>
+        <li>Abra o aplicativo do seu banco.</li>
+        <li>Escolha a opção "Pagar com Pix Copia e Cola".</li>
+        <li>Cole o Código PIX copiado e clique em "Continuar".</li>
+        <li>Verifique os dados e clique em "Confirmar Pagamento".</li>
+    </ol>
+
+    <p>Pronto! Seu pagamento foi concluído.</p>
+
+    <p>Após a transação, você terá acesso ao comprovante, que pode ser compartilhado facilmente.</p>
+
+    <p>*Por favor, encaminhe o comprovante via WhatsApp para o número: <a href="https://wa.me/5511993275017" target="_blank">11993275017.</a>
+
+</p>
+
+</body>
+        </div>
+        
+	<div id="right-content">
+            <img id="QRCode" src="C:\Users\Rafael\Desktop\Imagem\qr-code_itau_180reais.png" alt="QRCode">
+            <button id="copyQRCode-button">Copiar código PIX</button>
+        </div>
+    </div>
+
+
+ <script>
+        document.getElementById('copyQRCode-button').addEventListener('click', function() {
+            var codigoPIX = '00020126360014BR.GOV.BCB.PIX0114+55119932750175204000053039865406180.005802BR5912MONICA CUONO6009SAO PAULO622605222SlYz1HqzdqmUUjXIoS4AC63043785';
+
+            // Cria um elemento de input para armazenar o texto a ser copiado
+            var input = document.createElement('input');
+            input.value = codigoPIX;
+            document.body.appendChild(input);
+
+            // Seleciona o texto no elemento de input
+            input.select();
+            input.setSelectionRange(0, 99999); // Para dispositivos móveis
+
+            try {
+                // Tenta copiar o texto selecionado para a área de transferência usando o comando executar
+                document.execCommand('copy');
+                alert('Texto copiado para área de transferência!');
+            } catch (err) {
+                console.error('Erro ao copiar texto para área de transferência', err);
+            } finally {
+                // Remove o elemento de input
+                document.body.removeChild(input);
+            }
+        });
+    </script>
+
+
+</body>
+</html>
